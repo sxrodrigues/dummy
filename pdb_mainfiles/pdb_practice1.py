@@ -19,12 +19,13 @@ Created on Thu Jan  9 16:12:40 2020
 
 import numpy as np
 
-file = open('1A2Y_B.pdb','r')
-lines = file.readlines()
-file.close()
+file_ = open('1A2Y_B.pdb','r')
+lines = file_.readlines()
+file_.close()
 
 x_y_z_coords = []
 residue_numbers = []
+
 
 for line in lines:
     coord_x = float(line[30:38])
@@ -34,7 +35,8 @@ for line in lines:
     x_y_z_coords.append([coord_x, coord_y, coord_z])
     
     residue_numbers.append(float(line[22:26]))
-    
+
+
 resnuma = np.array(residue_numbers)
 xyz_a = np.array(x_y_z_coords)
 

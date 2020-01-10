@@ -36,10 +36,13 @@ for line in lines:
     
 
 resname = np.array(gln)
+print(resname)
 
 xyz_a = np.array(x_y_z_coords)
 
-gln_only_coords = xyz_a[resname == 'GLN']
+gln_mask = resname == 'GLN'
+
+gln_only_coords = xyz_a[gln_mask]
 
 print(gln_only_coords)
 
