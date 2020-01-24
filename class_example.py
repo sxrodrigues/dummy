@@ -1,6 +1,5 @@
 
 
-
 class Protein:
     """
     doctring.
@@ -13,7 +12,9 @@ class Protein:
         fname : str
             The path to the protein pdb file.
         """
-        return
+        self.fname = fname
+        with open(fname,'r') as f:
+            lines = f.readlines()
 
     def get_residue_coords(self, resnum):
         """
@@ -21,7 +22,8 @@ class Protein:
         Numpy (N, 3) where N is the number of atoms of the residue
         in ``resnum`` position.
         """
-        return
+        self.resnum = resnum
+        
 
     def slice_pdb(self, start, stop):
         """
